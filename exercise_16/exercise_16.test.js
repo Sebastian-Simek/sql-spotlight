@@ -4,11 +4,11 @@ const pool = require('../lib/utils/pool');
 describe('exercise 16', () => {
   afterAll(() => pool.end());
 
-  it.skip('find the first 10 movies with their actors', async () => {
+  it('find the first 10 movies with their actors', async () => {
     const { rows } = await pool.query(
       fs.readFileSync(`${__dirname}/exercise_16.sql`, 'utf-8')
     );
-    console.log(rows[0]);
+   
     expect(rows).toEqual([
       {
         title: 'Airplane Sierra',
